@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_services.c                                   :+:      :+:    :+:   */
+/*   ft_ps_checker_free.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 13:02:43 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/09 16:13:45 by gbrandon         ###   ########.fr       */
+/*   Created: 2019/10/10 19:34:41 by gbrandon          #+#    #+#             */
+/*   Updated: 2019/10/10 20:18:04 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_ps_checker.h"
+#include "avlt.h"
+#include "libftprintf.h"
 
 void		free_stack(t_stack **stack)
 {
@@ -31,4 +33,31 @@ void		free_stack(t_stack **stack)
 	}
 	free(*stack);
 	*stack = NULL;
+}
+
+void		free_avlt(t_avlt *tr)
+{
+	if (!tr)
+		return ;
+	
+	free_avlt(tr->left);
+	free_avlt(tr->right);
+	if (tr->item)
+	{
+		free(((t_opfunc*)tr->item)->line);
+		free(tr->item);
+	}
+	free(tr);
+}
+
+void		free_ft_list(t_list *lst)
+{
+	t_list	*temp;
+
+	while (lst)
+	{
+		temp = lst->next;
+		free(lst);
+		lst = temp;
+	}
 }

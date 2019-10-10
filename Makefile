@@ -23,12 +23,11 @@ LIBSHORT= ftprintf
 HEADERDIR= includes
 HEADER= ft_ps_checker.h
 SRCS1= ft_stack.c \
-		ft_ps_services.c \
 		ft_ps_operations.c \
 		ft_ps_operations_3.c \
 		ft_ps_operations_2.c \
 		ft_ps_checker.c \
-		ft_ps_checker_get_func.c \
+		ft_ps_checker_free.c \
 		ft_ps_checker_err_chk.c \
 		ft_ps_avlt_service.c \
 		ft_ps_avlt_integration.c

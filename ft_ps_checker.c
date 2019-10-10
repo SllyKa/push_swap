@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 20:00:41 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/10 17:38:45 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/10 20:31:56 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,27 +57,30 @@ t_stack				*ft_ps_arg_check(int argc, char **argv)
 	return (stack);
 }
 
-t_list				*ft_ps_instruct_check(t_list *lst)
+t_list				*ft_ps_instruct_check(t_list **lst, t_avlt **tr)
 {
 	char	*instruct;
 	int		e_code;
-	t_avlt	*tr;
 	t_list	*newl;
 
-	lst = NULL;
-	if (!(tr = init_ps_avlt()))
-		// free tree?
+	*lst = NULL;
+	if (!(*tr = init_ps_avlt()))
 		return (NULL);
 	while ((e_code = get_next_line(0, &instruct)) > 0)
 	{
 		newl = ft_lstnew(NULL, 0);
-		if (!(newl->content = srch_avlt(tr, instruct)))
+		if (!(newl->content = srch_avlt(*tr, instruct)))
+		{
+			free(instruct);
+			free(newl);
 			return (NULL);
-		ft_lstaddback(&lst, newl);
+		}
+		ft_lstaddback(lst, newl);
+		free(instruct);
 	}
 	if (e_code == -1)
 		return (NULL);
-	return (lst);
+	return (*lst);
 }
 
 int				ft_ps_exec_ops(t_stack *s, t_list *lst)
@@ -110,22 +113,18 @@ int				main(int argc, char **argv)
 {
 	t_stack		*st;
 	t_list		*lst;
+	t_avlt		*tr;
 
 	lst = NULL;
+	tr = NULL;
 	if (!(st = ft_ps_arg_check(argc, argv)))
-	{
 		write(2, "Error\n", 6);
-		return (0);
-	}
-	if (!(lst = ft_ps_instruct_check(lst)))
-	{
+	else if (!ft_ps_instruct_check(&lst, &tr))
 		write(2, "Error\n", 6);
-		return (0);
-	}
-	if (ft_ps_exec_ops(st, lst) <= 0)
-		ft_printf("KO\n");
 	else
-		ft_printf("OK\n");
-	//somwhere free stack tree list
+		ft_ps_exec_ops(st, lst) <= 0 ? ft_printf("KO\n") : ft_printf("OK\n");
+	free_stack(&st);
+	free_avlt(tr);
+	free_ft_list(lst);
 	return (0);
 }

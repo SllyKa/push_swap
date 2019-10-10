@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 22:55:35 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/10 15:01:36 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/10 20:22:25 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,12 @@ void			ps_rra(t_stack *s);
 void			ps_rrb(t_stack *s);
 void			ps_rrr(t_stack *s);
 void			free_stack(t_stack **s);
+void			free_avlt(t_avlt *tr);
+void			free_ft_list(t_list *lst);
 int				echk_atoi(int er_code, t_stack *stack);
 int				echk_duplicate(t_stack *stack, int size);
 t_stack			*ft_ps_arg_check(int argc, char **argv);
-t_list			*ft_ps_instruct_check(t_list *stack);
+t_list			*ft_ps_instruct_check(t_list **lst, t_avlt **tr);
 int				ft_ps_exec_ops(t_stack *s, t_list *lst);
 void			*t_ins(void *item);
 void			t_del(void *item);

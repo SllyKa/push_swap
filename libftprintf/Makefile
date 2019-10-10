@@ -9,7 +9,7 @@ CC_FLAGS= -Wall -Wextra #-Werror
 #	Debug compiler variables
 #
 
-DG_CC_FLAGS= -g -o0
+DG_CC_FLAGS= -g -O0
 
 #
 #	Release variables
