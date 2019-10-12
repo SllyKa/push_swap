@@ -22,7 +22,7 @@ LIBHEADER=libftprintf.h
 LIBSHORT= ftprintf
 HEADERDIR= includes
 HEADER= ft_ps_checker.h
-SRCS1= ft_stack.c \
+SRCS= ft_stack.c \
 		ft_ps_operations.c \
 		ft_ps_operations_3.c \
 		ft_ps_operations_2.c \
@@ -31,7 +31,7 @@ SRCS1= ft_stack.c \
 		ft_ps_checker_err_chk.c \
 		ft_ps_avlt_service.c \
 		ft_ps_avlt_integration.c
-OBJ1= $(SRCS1:.c=.o)
+OBJ= $(SRCS:.c=.o)
 
 all: $(NAME)
 
@@ -43,14 +43,14 @@ debug: CC_FLAGS += $(DG_CC_FLAGS)
 debug: $(NAME)
 
 #
-#	Release mode
+#	Release checker
 #
 
-$(NAME): $(LIB) $(OBJ1)
-	$(CC) $(CC_FLAGS) $(OBJ1) -L$(LIBDIR) -l$(LIBSHORT) -o $@
+$(NAME): $(LIB) $(OBJ)
+	$(CC) $(CC_FLAGS) $(OBJ) -L$(LIBDIR) -l$(LIBSHORT) -o $@
 
 $(LIB):
-	cd $(LIBDIR) && $(MAKE) -s #&& $(MAKE) clean
+	cd $(LIBDIR) && $(MAKE) -s
 
 %.o: %.c $(HEADERDIR)/$(HEADER)
 	$(CC) $(CC_FLAGS) -I$(HEADERDIR) -I$(LIBDIR)/$(HEADERDIR) -c $^

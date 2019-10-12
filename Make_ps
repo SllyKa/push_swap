@@ -1,0 +1,71 @@
+#
+#	Debug compiler variables
+#
+
+DG_CC_FLAGS= -g -O0
+
+#
+#	Compiler variables
+#
+
+CC= gcc
+CC_FLAGS= -Wall -Wextra -Werror
+
+#
+#	Checker release variables
+#
+
+NAME= push_swap
+LIBDIR= libftprintf
+LIB= libftprintf.a
+LIBHEADER=libftprintf.h
+LIBSHORT= ftprintf
+HEADERDIR= includes
+HEADER= ft_push_swap.h
+SRCS= ft_stack.c \
+		ft_push_swap.c \
+		ft_ps_sort_stacks.c \
+		ft_ps_services.c \
+		ft_ps_select.c \
+		ft_ps_operations.c \
+		ft_ps_operations_3.c \
+		ft_ps_operations_2.c \
+		ft_ps_checker_free.c \
+		ft_ps_checker_err_chk.c \
+		ft_ps_avlt_service.c \
+		ft_ps_avlt_integration.c
+OBJ= $(SRCS:.c=.o)
+
+all: $(NAME)
+
+#
+#	Debug mode settings
+#
+
+debug: CC_FLAGS += $(DG_CC_FLAGS)
+debug: $(NAME)
+
+#
+#	Release checker
+#
+
+$(NAME): $(LIB) $(OBJ)
+	$(CC) $(CC_FLAGS) $(OBJ) -L$(LIBDIR) -l$(LIBSHORT) -o $@
+
+$(LIB):
+	cd $(LIBDIR) && $(MAKE) -s
+
+%.o: %.c $(HEADERDIR)/$(HEADER)
+	$(CC) $(CC_FLAGS) -I$(HEADERDIR) -I$(LIBDIR)/$(HEADERDIR) -c $^
+
+#
+#	Clean
+#
+
+clean:
+	rm -rf *.o
+
+fclean: clean
+	rm -rf $(NAME)
+
+re: fclean all

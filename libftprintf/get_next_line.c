@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 13:45:41 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/09 14:45:00 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/12 20:29:41 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ static int		create_line(char **buf, char **line)
 	else
 		CHECK_ERR(*line = ft_strdup(head_line));
 	*buf = head_line;
+	ft_printf("hi!\n");
 	return (0);
 }
 

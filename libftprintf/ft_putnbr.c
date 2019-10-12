@@ -3,30 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lshanaha <lshanaha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/26 15:18:15 by lshanaha          #+#    #+#             */
-/*   Updated: 2019/01/17 13:58:52 by lshanaha         ###   ########.fr       */
+/*   Created: 2018/12/03 11:35:30 by gbrandon          #+#    #+#             */
+/*   Updated: 2019/10/12 11:10:58 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libftprintf.h"
 
-void	ft_putnbr(int n)
+static void		rec(int n)
 {
-	int				i;
-	unsigned int	k;
-
-	k = n;
-	if (n < 0)
+	if (n / 10 == 0)
 	{
-		write(1, "-", 1);
-		k = (unsigned int)n;
-		k = (-1) * (k);
+		ft_putchar(n + 48);
 	}
-	if (k >= 10)
-		ft_putnbr(k / 10);
-	i = k % 10 + '0';
-	write(1, &i, 1);
+	else
+	{
+		rec(n / 10);
+		ft_putchar((n % 10) + 48);
+	}
+}
+
+void			ft_putnbr(int n)
+{
+	if (n == -2147483648)
+	{
+		ft_putchar('-');
+		rec(n / -10);
+		ft_putchar('8');
+	}
+	else
+	{
+		if (n < 0)
+		{
+			ft_putchar('-');
+			n *= -1;
+		}
+		rec(n);
+	}
 }

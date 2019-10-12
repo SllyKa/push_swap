@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 21:02:17 by lshanaha          #+#    #+#             */
-/*   Updated: 2019/10/10 14:43:41 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/12 15:15:32 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -294,5 +294,7 @@ void				print_fmt_p(t_fmt *a);
 long long			ft_power(long x, long y);
 double				ft_power_float(long x, long y);
 int					ft_satoi(const char *str, int *er_code);
+t_list				*ft_int_to_lst(int *ar, size_t s);
+int					ft_issorted(int *ar, size_t s);
 
 #endif

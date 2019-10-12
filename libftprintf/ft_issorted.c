@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_checker.h                                    :+:      :+:    :+:   */
+/*   ft_issorted.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/13 22:55:35 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/12 10:21:02 by gbrandon         ###   ########.fr       */
+/*   Created: 2019/10/12 15:11:03 by gbrandon          #+#    #+#             */
+/*   Updated: 2019/10/12 15:15:01 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PS_CHECKER_H
-# define FT_PS_CHECKER_H
-#include "ft_ps_general.h"
-#include "avlt.h"
+#include <stdlib.h>
 #include "libftprintf.h"
 
-void			free_ft_list(t_list *lst);
-int				echk_atoi(int er_code, t_stack *stack);
-int				echk_duplicate(t_stack *stack, int size);
-t_list			*ft_ps_instruct_check(t_list **lst, t_avlt **tr);
-int				ft_ps_exec_ops(t_stack *s, t_list *lst);
+int		ft_issorted(int *ar, size_t s)
+{
+	int i;
 
-# endif
+	i = 0;
+	while (i < s - 1)
+	{
+		if (ar[i] < ar[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
+}

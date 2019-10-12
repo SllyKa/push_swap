@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ps_checker.h                                    :+:      :+:    :+:   */
+/*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/13 22:55:35 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/12 10:21:02 by gbrandon         ###   ########.fr       */
+/*   Created: 2019/10/11 15:09:49 by gbrandon          #+#    #+#             */
+/*   Updated: 2019/10/12 19:35:40 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PS_CHECKER_H
-# define FT_PS_CHECKER_H
-#include "ft_ps_general.h"
-#include "avlt.h"
+#include <unistd.h>
 #include "libftprintf.h"
+#include "ft_push_swap.h"
+#include "avlt.h"
 
-void			free_ft_list(t_list *lst);
-int				echk_atoi(int er_code, t_stack *stack);
-int				echk_duplicate(t_stack *stack, int size);
-t_list			*ft_ps_instruct_check(t_list **lst, t_avlt **tr);
-int				ft_ps_exec_ops(t_stack *s, t_list *lst);
+t_stack		*sort(t_stack *st)
+{
+	t_avlt	*tr;
 
-# endif
+	if (!(tr = init_ps_avlt()))
+	// free_tree
+		return (NULL);
+	ft_ps_sort_stacks(st, tr);
+	//ft_ps_print_stcks(st);
+	return (st);
+}
+
+int		main(int argc, char **argv)
+{
+	t_stack		*st;
+
+	if (!(st = ft_ps_arg_check(argc, argv)))
+		write(2, "Error\n", 6);
+	else
+		sort(st);
+	free_stack(&st);
+	return (0);
+}
