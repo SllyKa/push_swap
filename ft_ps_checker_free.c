@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 19:34:41 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/16 13:20:21 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/17 20:28:08 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void		free_stack(t_stack **stack)
 		(*stack)->b = NULL;
 		(*stack)->lenb = 0;
 	}
-	if((*stack)->op_lst)
+	if ((*stack)->op_lst)
 		free_ft_list((*stack)->op_lst);
 	free(*stack);
 	*stack = NULL;
@@ -41,7 +41,6 @@ void		free_avlt(t_avlt *tr)
 {
 	if (!tr)
 		return ;
-	
 	free_avlt(tr->left);
 	free_avlt(tr->right);
 	if (tr->item)
@@ -70,10 +69,24 @@ void		free_ft_liststckalone(t_list **lst)
 
 	if (!lst | !(*lst))
 		return ;
-	
 	temp = *lst;
 	*lst = (*lst)->next;
 	if (temp->content)
 		free(temp->content);
 	free(temp);
+}
+
+void		free_tab(char **tab)
+{
+	char	**tab_head;
+
+	if (!tab)
+		return ;
+	tab_head = tab;
+	while (*tab_head)
+	{
+		free(*tab_head);
+		tab_head++;
+	}
+	free(tab);
 }

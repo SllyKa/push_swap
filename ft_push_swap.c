@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 15:09:49 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/16 17:20:26 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/17 22:14:15 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_stack		*sort(t_stack *st)
 		return (NULL);
 	if (ft_ps_sort_stacka(st, tr, 0, 0) < 0)
 		ft_printf("lol!\n"); // lol!
-	print_lst(st->op_lst);
+	//print_lst(st->op_lst);
 	//ft_ps_print_stcks(st);
 	/*ft_printf("pa: %d\n", pacntr);
 	ft_printf("pb: %d\n", pbcntr);

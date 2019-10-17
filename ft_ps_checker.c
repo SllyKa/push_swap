@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 20:00:41 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/12 22:28:23 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/17 16:39:14 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int				ft_ps_exec_ops(t_stack *s, t_list *lst)
 	i = 0;
 	if (!lst || !s)
 		return (-1);
-	while(lst)
+	while (lst)
 	{
 		op = lst->content;
 		lst = lst->next;

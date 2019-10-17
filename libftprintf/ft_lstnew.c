@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 15:29:48 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/10 14:30:15 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/17 15:52:13 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	else
 	{
-		new_list->content = content;
+		new_list->content = (void*)content;
 		new_list->content_size = content_size;
 		new_list->next = NULL;
 	}

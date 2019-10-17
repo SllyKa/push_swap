@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 15:15:12 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/14 16:41:47 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/17 22:04:25 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int			check_for_three(t_stack *st, t_avlt *tr, int ba);
 int			check_for_two(t_stack *st, t_avlt *tr, int ba);
 void		do_gen_ops(t_stack *st, t_avlt *tr);
 void		do_gen_dbl_ops(t_stack *st, t_avlt *tr);
+void		basic_sort(t_stack *st, t_avlt *tr);
 
 #endif

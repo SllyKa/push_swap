@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 15:18:04 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/16 13:11:31 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/17 20:07:38 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void			ps_rra(t_stack *s);
 void			ps_rrb(t_stack *s);
 void			ps_rrr(t_stack *s);
 t_stack			*ft_ps_arg_check(int argc, char **argv);
+void			free_tab(char **tab);
 void			free_stack(t_stack **s);
 void			free_ft_liststckalone(t_list **lst);
 void			*t_ins(void *item);

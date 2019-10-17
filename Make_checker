@@ -29,6 +29,7 @@ SRCS= ft_stack.c \
 		ft_ps_checker.c \
 		ft_ps_checker_free.c \
 		ft_ps_checker_err_chk.c \
+		ft_ps_checker_err_chk_2.c \
 		ft_ps_avlt_service.c \
 		ft_ps_avlt_integration.c
 OBJ= $(SRCS:.c=.o)

@@ -6,28 +6,13 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 15:49:42 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/16 17:20:20 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/17 21:20:30 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 #include "ft_push_swap.h"
 #include "avlt.h"
-
-void		do_gen_ops(t_stack *st, t_avlt *tr)
-{
-	do_op(st, tr, "ra");
-	do_op(st, tr, "sa");
-	do_op(st, tr, "rra");
-}
-
-void		do_gen_dbl_ops(t_stack *st, t_avlt *tr)
-{
-	do_op(st, tr, "rr");
-	do_op(st, tr, "ss");
-	do_op(st, tr, "rrr");
-}
-
 
 /*mb someday...
 
