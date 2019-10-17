@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_ps_services_2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/19 20:20:07 by gbrandon          #+#    #+#             */
-/*   Updated: 2018/11/24 18:49:36 by gbrandon         ###   ########.fr       */
+/*   Created: 2019/10/16 12:25:51 by gbrandon          #+#    #+#             */
+/*   Updated: 2019/10/16 13:35:03 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
+#include "ft_push_swap.h"
+#include "libftprintf.h"
 
-size_t		ft_strlen(const char *str)
+void		print_lst(t_list *lst)
 {
-	const char		*beg;
-
-	beg = str;
-	while (*str)
-	{
-		str++;
-	}
-	return ((size_t)(str - beg));
+	if (!lst)
+		return ;
+	print_lst(lst->next);
+	ft_printf("%s\n", (char*)(lst->content));
 }

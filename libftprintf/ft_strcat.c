@@ -3,26 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lshanaha <lshanaha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/26 20:08:38 by lshanaha          #+#    #+#             */
-/*   Updated: 2019/01/14 17:39:47 by lshanaha         ###   ########.fr       */
+/*   Created: 2018/11/24 13:43:46 by gbrandon          #+#    #+#             */
+/*   Updated: 2018/11/24 14:24:21 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-
-char	*ft_strcat(char *destination, const char *append)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	size_t	i;
-	char	*res;
+	char *s1_start;
 
-	i = ft_strlen((char *)append);
-	res = destination;
-	while (*destination)
-		destination++;
-	while (i--)
-		*destination++ = *append++;
-	*destination = '\0';
-	return (res);
+	s1_start = s1;
+	while (*s1)
+		s1++;
+	while (*s2)
+	{
+		*s1++ = *s2++;
+	}
+	*s1 = '\0';
+	return (s1_start);
 }

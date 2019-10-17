@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 19:34:41 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/12 20:24:02 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/16 13:20:21 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void		free_stack(t_stack **stack)
 		(*stack)->b = NULL;
 		(*stack)->lenb = 0;
 	}
+	if((*stack)->op_lst)
+		free_ft_list((*stack)->op_lst);
 	free(*stack);
 	*stack = NULL;
 }
@@ -60,4 +62,18 @@ void		free_ft_list(t_list *lst)
 		free(lst);
 		lst = temp;
 	}
+}
+
+void		free_ft_liststckalone(t_list **lst)
+{
+	t_list	*temp;
+
+	if (!lst | !(*lst))
+		return ;
+	
+	temp = *lst;
+	*lst = (*lst)->next;
+	if (temp->content)
+		free(temp->content);
+	free(temp);
 }

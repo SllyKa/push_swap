@@ -1,0 +1,844 @@
+pb
+pb
+ra
+pb
+pb
+pb
+ra
+pb
+pb
+pb
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+pb
+ra
+ra
+ra
+pb
+pb
+pb
+ra
+pb
+ra
+ra
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+pb
+pb
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+pb
+pb
+ra
+pb
+pb
+pb
+ra
+pb
+ra
+ra
+pb
+pb
+pb
+ra
+pb
+pb
+ra
+ra
+pb
+ra
+ra
+ra
+pb
+ra
+ra
+pb
+ra
+ra
+pb
+pb
+pb
+ra
+ra
+pb
+pb
+pb
+ra
+ra
+ra
+pb
+pb
+pb
+ra
+ra
+pb
+pb
+pb
+ra
+ra
+pb
+ra
+pb
+pb
+ra
+pb
+pb
+pb
+pb
+ra
+pb
+ra
+pb
+ra
+ra
+pb
+ra
+pb
+ra
+pb
+pb
+pb
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+pb
+pb
+ra
+ra
+pb
+ra
+ra
+ra
+pb
+pb
+pb
+ra
+pb
+ra
+ra
+pb
+pb
+ra
+pb
+pb
+ra
+pb
+ra
+ra
+ra
+pb
+rra
+pb
+rra
+pb
+rra
+rra
+rra
+pb
+rra
+pb
+rra
+rra
+pb
+rra
+pb
+rra
+rra
+rra
+pb
+rra
+pb
+rra
+pb
+ra
+pb
+pb
+ra
+pb
+ra
+ra
+pb
+ra
+ra
+pb
+ra
+pb
+pb
+pb
+pb
+ra
+pb
+ra
+ra
+pb
+ra
+pb
+pb
+ra
+ra
+pa
+pa
+sa
+pa
+rb
+rb
+pa
+rrb
+rrb
+pa
+pa
+sa
+rb
+rb
+rb
+rb
+pa
+pa
+pa
+pa
+rrb
+rrb
+rrb
+rrb
+ra
+pb
+pb
+rra
+ss
+pa
+pa
+rb
+rb
+pa
+pa
+rrb
+rrb
+pa
+pa
+pa
+rb
+rb
+pa
+pa
+pa
+pa
+rrb
+rrb
+pb
+pb
+ra
+pb
+rra
+ss
+pa
+pa
+pa
+pa
+pa
+sa
+pa
+pa
+sa
+rb
+pa
+pa
+pa
+pa
+pa
+pa
+rb
+rb
+pa
+rb
+rb
+pa
+pa
+pa
+rb
+pa
+rb
+rb
+rb
+rb
+pa
+rb
+pa
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+pb
+pb
+ra
+pb
+pb
+ra
+ra
+ra
+ra
+pb
+pb
+pb
+rra
+rra
+rra
+pb
+ra
+pb
+pb
+rra
+rra
+sa
+rra
+sa
+pa
+pa
+pa
+ra
+sa
+rra
+rb
+rb
+pa
+pa
+pa
+rb
+pa
+rrb
+rrb
+rrb
+pb
+ra
+ra
+pb
+rra
+rra
+ss
+pa
+pa
+sa
+pa
+pa
+pa
+ss
+rr
+ss
+rrr
+pa
+pa
+rb
+pa
+rb
+pa
+rb
+rb
+rb
+pa
+rb
+pa
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+ra
+ra
+ra
+pb
+pb
+pb
+rra
+rra
+rra
+sa
+ra
+sa
+rra
+sa
+pa
+pa
+pa
+rb
+pa
+rb
+pa
+pa
+rrb
+rrb
+pa
+pa
+pa
+ss
+ra
+sa
+rra
+pa
+pa
+rb
+pa
+rb
+pa
+rb
+pa
+pa
+rb
+pa
+pa
+rb
+rb
+rb
+rb
+rb
+pa
+pa
+rb
+pa
+rb
+rb
+pa
+rb
+pa
+rb
+rb
+pa
+pa
+pa
+rb
+pa
+rb
+rb
+rb
+rb
+rb
+pa
+pa
+pa
+pa
+rb
+pa
+pa
+rb
+pa
+rb
+pa
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+ra
+pb
+ra
+ra
+pb
+pb
+ra
+pb
+pb
+ra
+pb
+pb
+pb
+ra
+pb
+ra
+pb
+ra
+ra
+pb
+ra
+ra
+pb
+pb
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+rra
+pb
+ra
+ra
+pb
+ra
+ra
+pb
+pb
+pb
+ra
+pb
+rra
+rra
+rra
+rra
+pb
+pb
+pb
+rra
+rra
+sa
+rr
+ss
+rrr
+sa
+pa
+pa
+pa
+rb
+rb
+rb
+pa
+pa
+pa
+rrb
+rrb
+rrb
+ss
+rr
+ss
+rrr
+pa
+pa
+pa
+ra
+sa
+rra
+rb
+rb
+rb
+pa
+pa
+pa
+pa
+rb
+rb
+pa
+pa
+pa
+rrb
+rrb
+rrb
+rrb
+rrb
+ra
+pb
+ra
+ra
+pb
+pb
+pb
+rra
+rra
+sa
+rra
+sa
+rb
+pa
+rb
+pa
+rrb
+rrb
+sa
+pa
+pa
+sa
+rb
+pa
+rb
+pa
+pa
+rrb
+rrb
+sa
+rr
+ss
+rrr
+sa
+pa
+pa
+pa
+rb
+pa
+rb
+pa
+rb
+rb
+rb
+rb
+pa
+pa
+rb
+pa
+pa
+rb
+pa
+pa
+pa
+rb
+pa
+pa
+pa
+pa
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+ra
+pb
+pb
+pb
+pb
+pb
+ra
+ra
+pb
+ra
+pb
+rra
+rra
+rra
+pb
+pb
+ra
+ra
+pb
+rra
+rra
+sa
+rra
+pa
+pa
+pa
+sa
+ra
+sa
+rra
+pa
+pa
+rb
+pa
+rb
+rb
+pa
+rrb
+rrb
+rrb
+pb
+pb
+ss
+pa
+pa
+sa
+pa
+pa
+pa
+rr
+ss
+rrr
+sa
+rb
+pa
+rb
+rb
+pa
+pa
+pa
+rb
+pa
+rb
+rb
+pa
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+ra
+pb
+ra
+ra
+pb
+pb
+rra
+rra
+rra
+pa
+pa
+pa
+rr
+ss
+rrr
+rb
+pa
+pa
+rb
+pa
+rrb
+rrb
+sa
+pa
+pa
+pa
+sa
+ra
+sa
+rra
+|----|---|
+|  36|   |
+|  95|   |
+| 238|   |
+| 321|   |
+| 411|   |
+| 646|   |
+| 702|   |
+| 737|   |
+| 833|   |
+|1165|   |
+|1265|   |
+|1372|   |
+|1390|   |
+|1462|   |
+|1474|   |
+|1639|   |
+|1553|   |
+|1782|   |
+|1696|   |
+|1869|   |
+|1954|   |
+|1955|   |
+|2073|   |
+|2194|   |
+|2212|   |
+|2318|   |
+|2438|   |
+|2446|   |
+|2580|   |
+|2696|   |
+|2723|   |
+|2765|   |
+|2746|   |
+|3132|   |
+|2796|   |
+|3211|   |
+|3337|   |
+|3377|   |
+|3490|   |
+|3514|   |
+|3765|   |
+|3834|   |
+|3997|   |
+|4148|   |
+|4156|   |
+|4181|   |
+|4425|   |
+|4665|   |
+|4715|   |
+|4774|   |
+|4842|   |
+|4947|   |
+|4998|   |
+|5030|   |
+|5054|   |
+|5173|   |
+|5306|   |
+|5456|   |
+|5491|   |
+|5504|   |
+|5732|   |
+|5748|   |
+|5758|   |
+|5962|   |
+|5989|   |
+|6088|   |
+|6081|   |
+|6232|   |
+|6158|   |
+|6466|   |
+|6487|   |
+|6668|   |
+|6772|   |
+|6830|   |
+|6962|   |
+|7076|   |
+|7033|   |
+|7439|   |
+|7183|   |
+|7552|   |
+|7638|   |
+|8359|   |
+|8432|   |
+|8389|   |
+|7039|   |
+|7339|   |
+|7984|   |
+|8325|   |
+|8520|   |
+|8662|   |
+|8675|   |
+|8703|   |
+|8932|   |
+|9122|   |
+|9491|   |
+|9839|   |
+|9898|   |
+|9904|   |
+|9911|   |
+|9971|   |

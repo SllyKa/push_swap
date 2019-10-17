@@ -6,12 +6,13 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 14:26:53 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/12 20:44:31 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/12 22:08:43 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+# include <stdlib.h>
 
 # define BUFF_SIZE 30
 # define CHECK_ERR(x) if (!(x)) return (-1)

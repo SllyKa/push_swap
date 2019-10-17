@@ -3,36 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lshanaha <lshanaha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 15:59:00 by lshanaha          #+#    #+#             */
-/*   Updated: 2019/01/14 17:41:02 by lshanaha         ###   ########.fr       */
+/*   Created: 2018/11/29 11:39:16 by gbrandon          #+#    #+#             */
+/*   Updated: 2018/11/29 15:57:57 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
 #include <stdlib.h>
+#include <string.h>
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char	*new_str;
-	size_t	i;
-	size_t	s_len;
+	char			*new_str;
+	char			*new_str_head;
+	unsigned int	i;
 
-	if (s == 0x0)
-		return (0x0);
-	s_len = ft_strlen(s);
-	if (start > s_len || s_len < start + len)
-		return (0x0);
-	new_str = (char *)malloc(len + 1);
-	if (new_str == 0x0)
-		return (new_str = 0x0);
-	i = 0;
-	while (s[start + i] && i < len)
+	i = start;
+	new_str = (char*)malloc(len + 1);
+	if (!new_str)
+		return (NULL);
+	new_str_head = new_str;
+	if (!s)
+		return (NULL);
+	while (i < len + start)
 	{
-		new_str[i] = s[start + i];
+		*new_str = s[i];
+		new_str++;
 		i++;
 	}
-	new_str[i] = '\0';
-	return (new_str);
+	*new_str = '\0';
+	return (new_str_head);
 }

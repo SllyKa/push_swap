@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 21:14:47 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/12 20:00:42 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/16 13:12:08 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ static t_stack		*ps_chk_arg_init(int *i, int *er_code, int argc)
 		exit(-1);
 	if (!(stack->b = (int*)malloc(sizeof(int) * argc)))
 		exit(-1);
+	stack->op_lst = NULL;
 	*i = 0;
 	stack->lena = 0;
 	stack->lenb = 0;

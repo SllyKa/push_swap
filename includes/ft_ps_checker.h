@@ -6,15 +6,16 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 22:55:35 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/12 10:21:02 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/16 13:22:38 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PS_CHECKER_H
 # define FT_PS_CHECKER_H
-#include "ft_ps_general.h"
 #include "avlt.h"
 #include "libftprintf.h"
+#include "ft_ps_general.h"
+
 
 void			free_ft_list(t_list *lst);
 int				echk_atoi(int er_code, t_stack *stack);

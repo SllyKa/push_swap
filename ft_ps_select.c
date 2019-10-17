@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 16:31:44 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/12 10:11:37 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/16 13:30:21 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ static t_stack	*split_arr(int *arr, size_t s, int pv)
 	arrs->b = NULL;
 	arrs->lena = 0;
 	arrs->lenb = 0;
+	arrs->op_lst = NULL;
 	while (i < s)
 	{
 		if (arr[i] < pv)
@@ -97,17 +98,17 @@ static int		ft_quicksel(int	*arr, size_t s, int q)
 	return (med);
 }
 
-int				ft_quicksel_medi(t_stack *st, int *er)
+int				ft_quicksel_medi(int *arr, size_t s, int *er)
 {
-	if (!st || st->lena <= 0)
+	if (!arr || s <= 0)
 	{
 		*er = -1;
 		return (0);
 	}
-	if (st->lena % 2 == 1)
-		return (ft_quicksel(st->a, st->lena, st->lena / 2));
+	if (s % 2 == 1)
+		return (ft_quicksel(arr, s, s / 2));
 	else
-		return (0.5 * (ft_quicksel(st->a, st->lena, st->lena / 2 - 1) 
-		+ ft_quicksel(st->a, st->lena, st->lena / 2)));
+		return (0.5 * (ft_quicksel(arr, s, s / 2 - 1) 
+		+ ft_quicksel(arr, s, s / 2)));
 	return (-1);
 }

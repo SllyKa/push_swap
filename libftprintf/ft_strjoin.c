@@ -3,34 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lshanaha <lshanaha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/23 16:25:30 by lshanaha          #+#    #+#             */
-/*   Updated: 2019/01/24 17:48:14 by lshanaha         ###   ########.fr       */
+/*   Created: 2018/11/29 12:25:59 by gbrandon          #+#    #+#             */
+/*   Updated: 2018/11/29 13:11:57 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
 #include <stdlib.h>
+#include "libftprintf.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*new_str;
-	size_t	i;
-	size_t	j;
+	size_t	len;
 
-	if (s1 == 0 || s2 == 0)
-		return (0);
-	if (!(new_str = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 2)))
-		return (0);
-	i = -1;
-	j = -1;
-	while (s1[++i])
-		new_str[i] = s1[i];
-	while (s2[++j])
-		new_str[i + j] = s2[j];
-	new_str[i + j] = '\0';
-	free((void *)s1);
-	free((void *)s2);
-	return (new_str);
+	if (s1 && s2)
+	{
+		len = ft_strlen(s1) + ft_strlen(s2);
+		new_str = (char*)malloc(len + 1);
+		if (!new_str)
+			return (NULL);
+		*new_str = '\0';
+		new_str = ft_strcat(new_str, s1);
+		new_str = ft_strcat(new_str, s2);
+		new_str[len] = '\0';
+		return (new_str);
+	}
+	return (NULL);
 }

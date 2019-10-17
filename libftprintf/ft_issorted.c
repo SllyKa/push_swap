@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 15:11:03 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/12 15:15:01 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/12 22:12:01 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int		ft_issorted(int *ar, size_t s)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (i < s - 1)

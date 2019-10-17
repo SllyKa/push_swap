@@ -6,10 +6,11 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 11:25:11 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/11 18:14:07 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/12 22:14:32 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libftprintf.h"
 
 static t_list		*set_head(int *ar, size_t s)
@@ -18,7 +19,7 @@ static t_list		*set_head(int *ar, size_t s)
 
 	if (ar && (s > 0))
 	{
-		if (!(head = ft_lstnew(ar[0], 0)))
+		if (!(head = ft_lstnew(&ar[0], 0)))
 			return (NULL);
 		return (head);
 	}
@@ -29,7 +30,7 @@ t_list				*ft_int_to_lst(int *ar, size_t s)
 {
 	t_list		*head;
 	t_list		*cur;
-	int			i;
+	size_t			i;
 
 	if (!ar)
 		return (NULL);
@@ -39,7 +40,7 @@ t_list				*ft_int_to_lst(int *ar, size_t s)
 	i = 1;
 	while (i < s)
 	{
-		if (!(cur->next = ft_lstnew(ar[i], 0)))
+		if (!(cur->next = ft_lstnew(&ar[i], 0)))
 			return (NULL);
 		cur = cur->next;
 		i++;

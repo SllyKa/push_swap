@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 20:00:41 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/12 20:38:43 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/12 22:28:23 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,10 @@ t_list				*ft_ps_instruct_check(t_list **lst, t_avlt **tr)
 	*lst = NULL;
 	if (!(*tr = init_ps_avlt()))
 		return (NULL);
-	ft_printf("hi!\n");	
 	while ((e_code = get_next_line(0, &instruct)) > 0)
 	{
-	ft_printf("inst: %s\n", instruct);
-	ft_printf("hi!\n");
 		if (!(newl = ft_lstnew(NULL, 0)))
 			return (NULL);
-	ft_printf("hi!\n");
 		if (!(newl->content = srch_avlt(*tr, instruct)))
 		{
 			free(instruct);

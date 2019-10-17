@@ -6,11 +6,12 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 13:45:41 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/12 20:29:41 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/12 22:39:04 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 #include "libftprintf.h"
 #include "get_next_line.h"
 
@@ -123,7 +124,6 @@ static int		create_line(char **buf, char **line)
 	else
 		CHECK_ERR(*line = ft_strdup(head_line));
 	*buf = head_line;
-	ft_printf("hi!\n");
 	return (0);
 }
 
