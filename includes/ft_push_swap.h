@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 15:15:12 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/17 22:04:25 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/18 12:19:08 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_stack		*sort(t_stack *st);
 int			ft_quicksel_medi(int *arr, size_t s, int *er);
 int			ft_ps_sort_stacka(t_stack *st, t_avlt *tr, int ba, int bb);
 int			ft_ps_sort_stackb(t_stack *st, t_avlt *tr, int ba, int bb);
+int			create_check_med_b(t_stack *st, int bb, int *med);
 void		do_op(t_stack *st, t_avlt *tr, char *cmd);
 int			check_for_three(t_stack *st, t_avlt *tr, int ba);
 int			check_for_two(t_stack *st, t_avlt *tr, int ba);

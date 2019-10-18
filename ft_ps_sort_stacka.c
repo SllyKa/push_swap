@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 21:17:46 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/17 22:17:36 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/18 19:27:27 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,45 @@ int			create_check_med_a(t_stack *st, int ba, int *med)
 	return (0);
 }
 
-int			move_from_a(t_stack *st, t_avlt *tr, int ba)
+int			find_ghost_med_a(t_stack *st, int ba, int med)
+{
+	t_stack	*tp;
+	int		i;
+	int		len;
+
+	if (!(tp = ps_chk_arg_init((st->lena - ba) / 2 + 2)))
+		exit(-1);
+	i = 0;
+	len = st->lena - ba;
+	while (len-- > 0)
+	{
+		if ((st->a)[st->lena - i - 1] <= med)
+		{
+			(tp->a)[tp->lena++] = (st->a)[st->lena - i - 1];
+		}
+		i++;
+	}
+	create_check_med_a(tp, 0, &med);
+	free_stack(&tp);
+	return (med);
+}
+
+int			roll_b(t_stack *st, int bb, int gh_med)
+{
+	int cntr;
+
+	cntr = 0;
+	if (st->lenb - bb == 0)
+		return (0);
+	//ft_printf("med: %d\n", gh_med);
+	//ft_printf("bb:  %d\n", bb);
+	//ft_printf("st->lenb:  %d\n", st->lenb);
+	if ((st->b)[st->lenb - 1] < gh_med)
+		cntr++;
+	return (cntr);
+}
+
+int			move_from_a(t_stack *st, t_avlt *tr, int ba, int bb)
 {
 	int		pbcntr;
 	int		cntr;
@@ -151,26 +189,50 @@ int			move_from_a(t_stack *st, t_avlt *tr, int ba)
 	int 	hlen;
 	int		len;
 
+	int	gh_med = 0;
+	int i = 0;
+	
 	cntr = 0;
 	pbcntr = 0;
 	len = st->lena - ba;
 	hlen = (st->lena - ba) / 2 + 1;
+	//ft_printf("ba:  %d\n", ba);
+	//ft_printf("st->lena:  %d\n", st->lena);
 	if (create_check_med_a(st, ba, &med) < 0)
 		return (-1);
-
+	gh_med = find_ghost_med_a(st, ba, med);
 	while (len-- > 0 && (pbcntr < hlen))
 	{
 		if ((st->a)[st->lena - 1] <= med)
 		{
+			if (i)
+				do_op(st, tr, "rb");
 			pbcntr++;
 			do_op(st, tr, "pb");
+			if ((i = roll_b(st, bb, gh_med)) < 0)
+				return (-1);
+			st->min_bot_b += i;
 		}
 		else
 		{
 			ba > 0 ? cntr++ : 0;
-			do_op(st, tr, "ra");
+			if (i)
+			{
+				do_op(st, tr, "rr");
+				i = 0;
+			}
+			else
+				do_op(st, tr, "ra");
 		}
 	}
+	if (i)
+	{
+		ba > 0 ? cntr++ : 0;
+		do_op(st, tr, "rr");
+		i = 0;
+	}
+	if (cntr > 1)
+		ft_ps_print_stcks(st);
 	while (cntr-- > 0)
 		do_op(st, tr, "rra");
 	return (0);
@@ -178,6 +240,9 @@ int			move_from_a(t_stack *st, t_avlt *tr, int ba)
 
 int					ft_ps_sort_stacka(t_stack *st, t_avlt *tr, int ba, int bb)
 {
+	int		min_bot;
+	if (st->lena - ba == 0)
+		return (0);
 	if (st->lena - ba == 1)
 		return (0);
 	if (check_for_two(st, tr, ba))
@@ -185,18 +250,19 @@ int					ft_ps_sort_stacka(t_stack *st, t_avlt *tr, int ba, int bb)
 	if (check_for_three(st, tr, ba))
 		return (0);
 	bb = st->lenb;
-	ft_ps_print_stcks(st);
-	if (move_from_a(st, tr, ba) < 0)
+	//ft_ps_print_stcks(st);
+	if (move_from_a(st, tr, ba, bb) < 0)
 		return (-1);
-		
-	//ft_printf("----->in\n");
+	min_bot = st->min_bot_b;
+	st->min_bot_b = 0;
+	//ft_printf("hi!\n");
 	if (ft_ps_sort_stacka(st, tr, ba, bb) < 0)
 		return (-1);
-	ft_ps_print_stcks(st);
-	//ft_printf("<-----out\n");
+	st->min_bot_b = min_bot;
+	//ft_ps_print_stcks(st);
 	ba = st->lena;
 	if (ft_ps_sort_stackb(st, tr, ba, bb) < 0)
 			return (-1);
-	ft_ps_print_stcks(st);
+	//ft_ps_print_stcks(st);
 	return (0);
 }

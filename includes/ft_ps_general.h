@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 15:18:04 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/17 20:07:38 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/18 15:47:03 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct			s_stack
 	int		*b;
 	int		lenb;
 	t_list	*op_lst;
+	int		min_bot_b;
 }						t_stack;
 
 typedef struct			s_opfunc
@@ -55,5 +56,6 @@ void			*srch_avlt(t_avlt *rt, char *it);
 void			free_avlt(t_avlt *tr);
 void			ft_ps_print_stcks(t_stack *st);
 void			print_lst(t_list *lst);
+t_stack			*ps_chk_arg_init(int argc);
 
 #endif

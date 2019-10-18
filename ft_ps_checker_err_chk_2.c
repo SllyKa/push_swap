@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 19:52:11 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/17 21:14:54 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/18 15:47:16 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static int			num_size(int argc, char **argv)
 	return (i);
 }
 
-static t_stack		*ps_chk_arg_init(int argc)
+t_stack		*ps_chk_arg_init(int argc)
 {
 	t_stack *stack;
 
@@ -79,6 +79,7 @@ static t_stack		*ps_chk_arg_init(int argc)
 	stack->op_lst = NULL;
 	stack->lena = 0;
 	stack->lenb = 0;
+	stack->min_bot_b = 0;
 	return (stack);
 }
 
