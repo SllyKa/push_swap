@@ -6,11 +6,11 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 17:09:05 by gbrandon          #+#    #+#             */
-/*   Updated: 2018/12/06 20:08:11 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/19 12:37:02 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libc.h>
+#include <stdlib.h>
 
 static char			*fill_word(char **s, char c)
 {

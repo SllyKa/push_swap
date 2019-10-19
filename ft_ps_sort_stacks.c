@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 10:16:24 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/17 21:20:39 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/19 12:44:41 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void		do_op(t_stack *st, t_avlt *tr, char *cmd)
 		if (!(tmp->content = ft_strdup(cmd)))
 			exit(-1);
 		ft_lstadd(&(st->op_lst), tmp);
-	}
 	//ft_printf("%s\n", cmd);
+	}
 }
 
 void		do_gen_ops(t_stack *st, t_avlt *tr)

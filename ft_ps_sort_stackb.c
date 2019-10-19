@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 21:19:37 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/17 22:17:42 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/19 12:43:19 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,21 +107,21 @@ int				ft_ps_sort_stackb(t_stack *st, t_avlt *tr, int ba, int bb)
 	//ft_printf("--->bb: %d\n", bb);
 	//ft_printf("--->lenb: %d\n", st->lenb);
 	ba = st->lena;
-	ft_ps_print_stcks(st);
+	//ft_ps_print_stcks(st);
 	if (move_from_b(st, tr, bb) < 0)
 		return (-1);
 
 	//ft_printf("----->in_b\n");
 	if (ft_ps_sort_stacka(st, tr, ba, bb) < 0)
 		return (-1);
-	ft_ps_print_stcks(st);	
+	//ft_ps_print_stcks(st);	
 	//ft_printf("<-----out_b\n");
 	//bb = st->lenb;
 	//ft_printf("----->in_b\n");
-	ft_ps_print_stcks(st);	
+	//ft_ps_print_stcks(st);	
 	if (ft_ps_sort_stackb(st, tr, ba, bb) < 0)
 		return (-1);
-	ft_ps_print_stcks(st);	
+	//ft_ps_print_stcks(st);	
 	//ft_printf("<-----out_b\n");	
 	return (0);
 }
