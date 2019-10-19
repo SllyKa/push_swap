@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 21:17:46 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/18 19:27:27 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/19 12:10:17 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -231,8 +231,8 @@ int			move_from_a(t_stack *st, t_avlt *tr, int ba, int bb)
 		do_op(st, tr, "rr");
 		i = 0;
 	}
-	if (cntr > 1)
-		ft_ps_print_stcks(st);
+	//if (cntr > 1)
+	//	ft_ps_print_stcks(st);
 	while (cntr-- > 0)
 		do_op(st, tr, "rra");
 	return (0);
@@ -250,6 +250,11 @@ int					ft_ps_sort_stacka(t_stack *st, t_avlt *tr, int ba, int bb)
 	if (check_for_three(st, tr, ba))
 		return (0);
 	bb = st->lenb;
+	//if (st->lena == 50)
+	//{
+	//	ft_ps_print_stcks(st);
+	//	exit(0);
+	//}
 	//ft_ps_print_stcks(st);
 	if (move_from_a(st, tr, ba, bb) < 0)
 		return (-1);

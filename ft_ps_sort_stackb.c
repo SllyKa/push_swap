@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 21:19:37 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/18 18:50:31 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/19 12:10:01 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,10 +150,10 @@ int				ft_ps_sort_stackb(t_stack *st, t_avlt *tr, int ba, int bb)
 	*/
 	ba = st->lena;
 	//ft_ps_print_stcks(st);
+
 	if (move_from_b(st, tr, bb) < 0)
 		return (-1);
 	//ft_printf("-->min_bot: %d\n", min_bot);
-
 	//ft_printf("----->in\n");
 	min_bot = st->min_bot_b;
 	st->min_bot_b = 0;
