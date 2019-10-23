@@ -6,16 +6,16 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 15:18:04 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/19 13:27:43 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/23 22:51:17 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PS_GENERAL_H
 # define FT_PS_GENERAL_H
-#include "libftprintf.h"
-#include "avlt.h"
+# include "libftprintf.h"
+# include "avlt.h"
 
-typedef struct			s_stack
+typedef struct	s_stack
 {
 	int		*a;
 	int		lena;
@@ -24,13 +24,13 @@ typedef struct			s_stack
 	t_list	*op_lst;
 	int		min_bot_b;
 	int		min_bot_a;
-}						t_stack;
+}				t_stack;
 
-typedef struct			s_opfunc
+typedef struct	s_opfunc
 {
 	char	*line;
 	void	*func;
-}						t_opfunc;
+}				t_opfunc;
 
 void			push(int *stk, int *s_len, int num);
 int				pop(int *stk, int *s_len);
@@ -58,5 +58,6 @@ void			free_avlt(t_avlt *tr);
 void			ft_ps_print_stcks(t_stack *st);
 void			print_lst(t_list *lst);
 t_stack			*ps_chk_arg_init(int argc);
+void			free_ft_list_from_stck(t_list *lst);
 
 #endif

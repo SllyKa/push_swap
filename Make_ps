@@ -25,7 +25,6 @@ HEADER= ft_push_swap.h
 SRCS= ft_stack.c \
 		ft_push_swap.c \
 		ft_ps_sort_stacks.c \
-		ft_ps_sort_stacks_2.c \
 		ft_ps_sort_stacka.c \
 		ft_ps_sort_stackb.c \
 		ft_ps_services.c \
@@ -39,7 +38,13 @@ SRCS= ft_stack.c \
 		ft_ps_checker_err_chk.c \
 		ft_ps_avlt_service.c \
 		ft_ps_avlt_integration.c \
-		ft_ps_extra_algs.c
+		ft_ps_extra_algs.c \
+		ft_ps_move_from_b.c \
+		ft_ps_sort_stackb_chk.c \
+		ft_ps_move_from_a.c \
+		ft_ps_sort_stacka_chk.c \
+		ft_ps_basic_sorta.c \
+		ft_ps_basic_sorta_cases.c
 OBJ= $(SRCS:.c=.o)
 
 all: $(NAME)

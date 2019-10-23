@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 15:09:49 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/23 16:39:31 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/23 23:17:44 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,12 @@
 #include "ft_push_swap.h"
 #include "avlt.h"
 
-extern int pacntr;  // global
-extern int pbcntr;  // global
-extern int racntr;  // global
-extern int rbcntr;  // global
-extern int rracntr;  // global
-extern int rrbcntr;  // global
-
 t_stack		*sort(t_stack *st, t_avlt **tr)
 {
 	if (!(*tr = init_ps_avlt()))
 		return (NULL);
+	if (ft_issorted(st->a, st->lena))
+		return (st);
 	if (st->lena == 1)
 		return (st);
 	else if (st->lena == 2)
@@ -35,14 +30,16 @@ t_stack		*sort(t_stack *st, t_avlt **tr)
 	else if (st->lena < 6)
 		for_five(st, *tr);
 	else
+	{
 		if (ft_ps_sort_stacka(st, *tr, 0, 0) < 0)
-			return(NULL);
+			return (NULL);
+	}
 	if (st->op_lst)
 		print_lst(st->op_lst);
 	return (st);
 }
 
-int		main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	t_stack		*st;
 	t_avlt		*tr;

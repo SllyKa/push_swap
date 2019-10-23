@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 11:41:34 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/10 13:24:31 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/23 22:06:27 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void		*t_ins(void *item)
 	if (!(it->line = strdup(((t_opfunc*)item)->line)))
 		return (NULL);
 	it->func = ((t_opfunc*)item)->func;
-	return (it); 
+	return (it);
 }
 
 void		t_del(void *item)
@@ -35,5 +35,5 @@ void		t_del(void *item)
 
 int			t_char_cmp(void *a, void *b)
 {
-	return (ft_strcmp(((t_opfunc*)a)->line,((t_opfunc*)b)->line));
+	return (ft_strcmp(((t_opfunc*)a)->line, ((t_opfunc*)b)->line));
 }

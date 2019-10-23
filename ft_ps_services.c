@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 10:35:35 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/12 12:39:39 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/23 22:16:53 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int		ft_cntnbr(int n)
 	return (cntr);
 }
 
-static int		fsize(int	*ar, size_t s)
+static int		fsize(int *ar, size_t s)
 {
 	int		max;
 	int		min;
@@ -114,18 +114,12 @@ void			ft_ps_print_stcks(t_stack *st)
 	f_sizeb = fsize(st->b, st->lenb);
 	i = 0;
 	ft_printf("|");
-	while (i < f_sizea)
-	{
+	while (i++ < f_sizea)
 		ft_printf("%c", '-');
-		i++;
-	}
 	ft_printf("|");
 	i = 0;
-	while (i < f_sizeb)
-	{
+	while (i++ < f_sizeb)
 		ft_printf("%c", '-');
-		i++;
-	}
 	ft_printf("|\n");
 	max = ((st->lena > st->lenb) ? st->lena : st->lenb);
 	i = 0;

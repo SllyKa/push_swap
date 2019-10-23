@@ -6,12 +6,12 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 19:34:41 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/17 20:28:08 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/23 23:00:44 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "ft_ps_checker.h"
+#include "ft_ps_general.h"
 #include "avlt.h"
 #include "libftprintf.h"
 
@@ -32,7 +32,7 @@ void		free_stack(t_stack **stack)
 		(*stack)->lenb = 0;
 	}
 	if ((*stack)->op_lst)
-		free_ft_list((*stack)->op_lst);
+		free_ft_list_from_stck((*stack)->op_lst);
 	free(*stack);
 	*stack = NULL;
 }

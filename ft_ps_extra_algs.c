@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 13:49:36 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/23 16:47:49 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/23 23:12:32 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ void		for_three(t_stack *st, t_avlt *tr)
 			do_op(st, tr, "sa");
 	}
 	else if ((st->a)[st->lena - 3] > (st->a)[st->lena - 1] &&
-			(st->a)[st->lena - 2] > (st->a)[st->lena - 3])
-			{
-				do_op(st, tr, "sa");
-				do_op(st, tr, "ra");
-			}
+	(st->a)[st->lena - 2] > (st->a)[st->lena - 3])
+	{
+		do_op(st, tr, "sa");
+		do_op(st, tr, "ra");
+	}
 	else if (((st->a)[st->lena - 2] > (st->a)[st->lena - 3])
 			&& ((st->a)[st->lena - 2] > (st->a)[st->lena - 1]))
-			do_op(st, tr, "rra");
+		do_op(st, tr, "rra");
 }
 
 static void	find_mx_mn(t_stack *st, int *max, int *min)
@@ -66,11 +66,13 @@ void		for_five(t_stack *st, t_avlt *tr)
 	int		max;
 	int		min;
 
+	if (ft_issorted(st->a, st->lena))
+		return ;
 	find_mx_mn(st, &max, &min);
 	while (st->lenb < 2)
 	{
 		if (((st->a)[st->lena - 1] == max) ||
-			 ((st->a)[st->lena - 1] == min))
+		((st->a)[st->lena - 1] == min))
 			do_op(st, tr, "pb");
 		else
 			do_op(st, tr, "ra");

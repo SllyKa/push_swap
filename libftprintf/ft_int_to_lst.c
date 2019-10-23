@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 11:25:11 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/12 22:14:32 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/23 19:21:54 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_list				*ft_int_to_lst(int *ar, size_t s)
 {
 	t_list		*head;
 	t_list		*cur;
-	size_t			i;
+	size_t		i;
 
 	if (!ar)
 		return (NULL);

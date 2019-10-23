@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 19:52:11 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/23 15:46:10 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/23 22:11:42 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ static int			num_size(int argc, char **argv)
 	return (i);
 }
 
-t_stack		*ps_chk_arg_init(int argc)
+t_stack				*ps_chk_arg_init(int argc)
 {
 	t_stack *stack;
 
-	if (argc < 1) //check on mac
+	if (argc < 1)
 	{
 		exit(0);
 	}

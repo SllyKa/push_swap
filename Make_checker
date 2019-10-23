@@ -31,7 +31,8 @@ SRCS= ft_stack.c \
 		ft_ps_checker_err_chk.c \
 		ft_ps_checker_err_chk_2.c \
 		ft_ps_avlt_service.c \
-		ft_ps_avlt_integration.c
+		ft_ps_avlt_integration.c \
+		ft_ps_services_2.c
 OBJ= $(SRCS:.c=.o)
 
 all: $(NAME)

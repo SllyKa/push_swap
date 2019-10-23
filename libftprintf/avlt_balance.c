@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 16:16:36 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/09/27 23:04:02 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/23 19:06:23 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	balance(t_avlt **node)
 t_avlt	*rotater(t_avlt *node)
 {
 	t_avlt	*s;
-	
+
 	s = node->left;
 	node->left = s->right;
 	s->right = node;
