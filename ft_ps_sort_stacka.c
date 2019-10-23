@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 21:17:46 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/19 12:10:17 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/23 09:07:44 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,29 +105,60 @@ void		basic_sort(t_stack *st, t_avlt *tr)
 		do_op(st, tr, "sb");
 }
 
-int		check_for_three(t_stack *st, t_avlt *tr, int ba)
+int		check_for_three(t_stack *st, t_avlt *tr, int *ba, int bb)
 {
-	if ((st->lena - ba) == 3)
+	if ((st->lena - *ba - st->min_bot_a) == 3)
 	{
-		if (!ft_issorted(st->a, st->lena))
+		if (!ft_issorted(&(st->a)[*ba + st->min_bot_a], st->lena - *ba - st->min_bot_a))
 			basic_sort(st, tr);
-		return (1);
+		//ft_printf("st->lenb: %d\n", st->lenb);//
+		//ft_printf("bb: %d\n", bb);//
+		//ft_printf("st->min_bot_a: %d\n", st->min_bot_a);//
+		*ba += 3;
+		bb++;//
+		if (st->min_bot_a > 0)
+		{
+			if (st->lenb > 1 && (st->b[st->lenb - 1] > (st->a)[0] || (st->b)[0] > (st->a)[0]))
+				return (1);
+		}
 	}
 	return (0);
 }
 
-int		check_for_two(t_stack *st, t_avlt *tr, int ba)
+int		check_for_two(t_stack *st, t_avlt *tr, int *ba, int bb)
 {
-	if ((st->lena - ba) == 2)
+	if ((st->lena - *ba - st->min_bot_a) == 2)
 	{
-		if (!ft_issorted(st->a, st->lena))
+		if (!ft_issorted(&(st->a)[*ba + st->min_bot_a], st->lena - *ba - st->min_bot_a))
 		{
 			if (st->lenb > 1 && (st->b)[st->lenb - 1] < (st->b)[st->lenb - 2])
 				do_op(st, tr, "ss");
 			else
 				do_op(st, tr, "sa");
 		}
-		return (1);
+		*ba += 2;
+		//if ((bb > 0 && st->lenb - bb > 0)|| st->min_bot_a == 0)
+		bb++;//
+		if (st->min_bot_a > 0)
+		{
+			if (st->lenb > 1 && (st->b[st->lenb - 1] > (st->a)[0] || (st->b)[0] > (st->a)[0]))
+				return (1);
+		}
+	}
+	return (0);
+}
+
+int		check_for_one(t_stack *st, int *ba, int bb)
+{
+	if ((st->lena - *ba - st->min_bot_a) == 1)
+	{
+		(*ba)++;
+		bb++;//
+		if (st->min_bot_a > 0)
+		{
+			if (st->lenb > 1 && (st->b[st->lenb - 1] > (st->a)[0] || (st->b)[0] > (st->a)[0]))
+				return (1);
+		}
 	}
 	return (0);
 }
@@ -194,10 +225,11 @@ int			move_from_a(t_stack *st, t_avlt *tr, int ba, int bb)
 	
 	cntr = 0;
 	pbcntr = 0;
+	ba = (ba > 0 ? (ba + st->min_bot_a) : st->min_bot_a);
 	len = st->lena - ba;
 	hlen = (st->lena - ba) / 2 + 1;
 	//ft_printf("ba:  %d\n", ba);
-	//ft_printf("st->lena:  %d\n", st->lena);
+	//ft_printf("min_bot_a:  %d\n", st->min_bot_a);
 	if (create_check_med_a(st, ba, &med) < 0)
 		return (-1);
 	gh_med = find_ghost_med_a(st, ba, med);
@@ -227,8 +259,7 @@ int			move_from_a(t_stack *st, t_avlt *tr, int ba, int bb)
 	}
 	if (i)
 	{
-		ba > 0 ? cntr++ : 0;
-		do_op(st, tr, "rr");
+		do_op(st, tr, "rb");
 		i = 0;
 	}
 	//if (cntr > 1)
@@ -238,36 +269,72 @@ int			move_from_a(t_stack *st, t_avlt *tr, int ba, int bb)
 	return (0);
 }
 
+void					return_bot_a(t_stack *st, t_avlt *tr)
+{
+	while(st->min_bot_a > 0)
+	{
+		do_op(st, tr, "rra");
+		(st->min_bot_a)--;
+	}
+	// modificate it?
+}
+
 int					ft_ps_sort_stacka(t_stack *st, t_avlt *tr, int ba, int bb)
 {
-	int		min_bot;
-	if (st->lena - ba == 0)
+	//int		min_bot_a;
+	int		min_bot_b;
+
+	ft_printf("st->lena: %d\n", st->lena);//
+	ft_printf("ba: %d\n", ba);//
+	ft_printf("bb: %d\n", bb);//
+	ft_printf("st->min_bot_a: %d\n", st->min_bot_a);//
+	if ((st->lena - ba) == 0)
+	{
+		//ft_printf("hi\n");
 		return (0);
-	if (st->lena - ba == 1)
+	}
+	/*else if ((st->lena - ba - st->min_bot_a) == 1)
+	{	
+		ba++;
+		if ((bb > 0 && st->lenb - bb > 0) || st->min_bot_a == 0)
+			return (0);
+	}*/
+	else if (check_for_one(st, &ba, bb))
 		return (0);
-	if (check_for_two(st, tr, ba))
+	else if (check_for_two(st, tr, &ba, bb))
 		return (0);
-	if (check_for_three(st, tr, ba))
+	else if (check_for_three(st, tr, &ba, bb))
 		return (0);
-	bb = st->lenb;
-	//if (st->lena == 50)
-	//{
-	//	ft_ps_print_stcks(st);
-	//	exit(0);
-	//}
-	//ft_ps_print_stcks(st);
-	if (move_from_a(st, tr, ba, bb) < 0)
-		return (-1);
-	min_bot = st->min_bot_b;
+	else
+	{
+		bb = st->lenb;		
+		if (st->min_bot_a > 0 && st->lena - ba == st->min_bot_a)
+			return_bot_a(st, tr);
+		//ft_printf("hi\n");
+		if (st->lena - ba > 3)
+		{
+			if (move_from_a(st, tr, ba, bb) < 0)
+				return (-1);
+		}
+	}
+	min_bot_b = st->min_bot_b;
 	st->min_bot_b = 0;
 	//ft_printf("hi!\n");
+	ft_printf("--->in_aa\n");//
 	if (ft_ps_sort_stacka(st, tr, ba, bb) < 0)
 		return (-1);
-	st->min_bot_b = min_bot;
+	ft_printf("--->out_aa\n");//
+	st->min_bot_b = min_bot_b;
 	//ft_ps_print_stcks(st);
-	ba = st->lena;
+	//ba = st->lena;
+	//min_bot_a = st->min_bot_a;
+	//st->min_bot_a = 0;
+	//ft_printf("min_bot_b: %d\n", st->min_bot_b);
+	ft_printf("--->in_ba\n");//
 	if (ft_ps_sort_stackb(st, tr, ba, bb) < 0)
 			return (-1);
+	//st->min_bot_a = min_bot_a;
+	ft_printf("--->out_ba\n");//
 	//ft_ps_print_stcks(st);
 	return (0);
 }

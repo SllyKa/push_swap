@@ -3,7 +3,7 @@
 #
 
 CC= gcc
-CC_FLAGS= -Wall -Wextra -Werror
+CC_FLAGS= -Wall -Wextra #-Werror
 
 #
 #	Debug compiler variables

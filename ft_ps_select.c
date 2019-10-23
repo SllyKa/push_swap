@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 16:31:44 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/18 12:40:27 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/23 00:18:28 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,6 @@ int				ft_quicksel_medi(int *arr, size_t s, int *er)
 	if (s % 2 == 1)
 		return (ft_quicksel(arr, s, s / 2));
 	else
-		return (0.5 * (ft_quicksel(arr, s, s / 2 - 1)
-	+ ft_quicksel(arr, s, s / 2)));
+		return (0.5 * ((long)(ft_quicksel(arr, s, s / 2 - 1)
+	+ (long)ft_quicksel(arr, s, s / 2))));
 }

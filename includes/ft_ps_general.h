@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 15:18:04 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/18 15:47:03 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/19 13:27:43 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct			s_stack
 	int		lenb;
 	t_list	*op_lst;
 	int		min_bot_b;
+	int		min_bot_a;
 }						t_stack;
 
 typedef struct			s_opfunc
