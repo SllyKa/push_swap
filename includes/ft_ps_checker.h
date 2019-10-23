@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 22:55:35 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/16 13:22:38 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/23 16:02:27 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 void			free_ft_list(t_list *lst);
 int				echk_atoi(int er_code, t_stack *stack);
 int				echk_duplicate(t_stack *stack, int size);
-t_list			*ft_ps_instruct_check(t_list **lst, t_avlt **tr);
+int				ft_ps_instruct_check(t_list **lst, t_avlt **tr);
 int				ft_ps_exec_ops(t_stack *s, t_list *lst);
 
 # endif

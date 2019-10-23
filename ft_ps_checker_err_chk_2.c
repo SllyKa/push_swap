@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 19:52:11 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/19 13:28:05 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/23 15:46:10 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,10 @@ t_stack		*ps_chk_arg_init(int argc)
 {
 	t_stack *stack;
 
-	if (argc <= 1)
-		return (NULL);
+	if (argc < 1) //check on mac
+	{
+		exit(0);
+	}
 	if (!(stack = (t_stack*)malloc(sizeof(t_stack))))
 		exit(-1);
 	if (!(stack->a = (int*)malloc(sizeof(int) * argc)))

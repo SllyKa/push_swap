@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 20:00:41 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/17 16:39:14 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/23 16:02:12 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "ft_ps_checker.h"
 #include "avlt.h"
 
-t_list				*ft_ps_instruct_check(t_list **lst, t_avlt **tr)
+int				ft_ps_instruct_check(t_list **lst, t_avlt **tr)
 {
 	char	*instruct;
 	int		e_code;
@@ -25,23 +25,23 @@ t_list				*ft_ps_instruct_check(t_list **lst, t_avlt **tr)
 
 	*lst = NULL;
 	if (!(*tr = init_ps_avlt()))
-		return (NULL);
+		return (-1);
 	while ((e_code = get_next_line(0, &instruct)) > 0)
 	{
 		if (!(newl = ft_lstnew(NULL, 0)))
-			return (NULL);
+			return (-2);
 		if (!(newl->content = srch_avlt(*tr, instruct)))
 		{
 			free(instruct);
 			free(newl);
-			return (NULL);
+			return (-3);
 		}
 		ft_lstaddback(lst, newl);
 		free(instruct);
 	}
 	if (e_code == -1)
-		return (NULL);
-	return (*lst);
+		return (-4);
+	return (0);
 }
 
 int				ft_ps_exec_ops(t_stack *s, t_list *lst)
@@ -50,7 +50,7 @@ int				ft_ps_exec_ops(t_stack *s, t_list *lst)
 	int			i;
 
 	i = 0;
-	if (!lst || !s)
+	if (!s)
 		return (-1);
 	while (lst)
 	{
@@ -80,7 +80,7 @@ int				main(int argc, char **argv)
 	tr = NULL;
 	if (!(st = ft_ps_arg_check(argc, argv)))
 		write(2, "Error\n", 6);
-	else if (!ft_ps_instruct_check(&lst, &tr))
+	else if (ft_ps_instruct_check(&lst, &tr) < 0)
 		write(2, "Error\n", 6);
 	else
 		ft_ps_exec_ops(st, lst) <= 0 ? ft_printf("KO\n") : ft_printf("OK\n");
