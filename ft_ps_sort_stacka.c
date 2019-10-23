@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 21:17:46 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/23 09:07:44 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/23 13:07:16 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -281,13 +281,13 @@ void					return_bot_a(t_stack *st, t_avlt *tr)
 
 int					ft_ps_sort_stacka(t_stack *st, t_avlt *tr, int ba, int bb)
 {
-	//int		min_bot_a;
+	int		min_bot_a;
 	int		min_bot_b;
 
-	ft_printf("st->lena: %d\n", st->lena);//
-	ft_printf("ba: %d\n", ba);//
-	ft_printf("bb: %d\n", bb);//
-	ft_printf("st->min_bot_a: %d\n", st->min_bot_a);//
+	//ft_printf("st->lena: %d\n", st->lena);//
+	//ft_printf("ba: %d\n", ba);//
+	//ft_printf("bb: %d\n", bb);//
+	//ft_printf("st->min_bot_a: %d\n", st->min_bot_a);//
 	if ((st->lena - ba) == 0)
 	{
 		//ft_printf("hi\n");
@@ -319,22 +319,35 @@ int					ft_ps_sort_stacka(t_stack *st, t_avlt *tr, int ba, int bb)
 	}
 	min_bot_b = st->min_bot_b;
 	st->min_bot_b = 0;
-	//ft_printf("hi!\n");
-	ft_printf("--->in_aa\n");//
+	//ft_printf("--->in_aa\n");//
 	if (ft_ps_sort_stacka(st, tr, ba, bb) < 0)
 		return (-1);
-	ft_printf("--->out_aa\n");//
+	//ft_printf("--->out_aa\n");//
 	st->min_bot_b = min_bot_b;
-	//ft_ps_print_stcks(st);
 	//ba = st->lena;
-	//min_bot_a = st->min_bot_a;
-	//st->min_bot_a = 0;
-	//ft_printf("min_bot_b: %d\n", st->min_bot_b);
-	ft_printf("--->in_ba\n");//
+	min_bot_a = st->min_bot_a;
+	st->min_bot_a = 0;
+	//ft_printf("--->in_ba\n");//
 	if (ft_ps_sort_stackb(st, tr, ba, bb) < 0)
 			return (-1);
-	//st->min_bot_a = min_bot_a;
-	ft_printf("--->out_ba\n");//
-	//ft_ps_print_stcks(st);
+	st->min_bot_a = min_bot_a;
+	//ft_printf("min_bot_aa: %d", st->min_bot_a);
+	//ft_printf("--->out_ba\n");//
+
+	if (st->min_bot_a > 0)
+	{
+		if (st->lenb > 1 && (st->b[st->lenb - 1] > (st->a)[0] || (st->b)[0] > (st->a)[0]))
+			return (0);
+		min_bot_b = st->min_bot_b;
+		st->min_bot_b = 0;
+		//ft_printf("--->in_aa_bot\n");//
+		if (ft_ps_sort_stacka(st, tr, st->lena - st->min_bot_a, bb) < 0)
+			return (-1);
+		//ft_printf("--->out_aa_bot\n");//
+		st->min_bot_b = min_bot_b;
+
+		st->min_bot_a = 0;
+	}
+
 	return (0);
 }
