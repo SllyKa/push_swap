@@ -29,6 +29,7 @@ SRCS= ft_stack.c \
 		ft_ps_sort_stackb.c \
 		ft_ps_services.c \
 		ft_ps_services_2.c \
+		ft_ps_services_3.c \
 		ft_ps_select.c \
 		ft_ps_operations.c \
 		ft_ps_operations_3.c \

@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 10:35:35 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/23 22:16:53 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/24 16:16:57 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,15 +112,7 @@ void			ft_ps_print_stcks(t_stack *st)
 		return ;
 	f_sizea = fsize(st->a, st->lena);
 	f_sizeb = fsize(st->b, st->lenb);
-	i = 0;
-	ft_printf("|");
-	while (i++ < f_sizea)
-		ft_printf("%c", '-');
-	ft_printf("|");
-	i = 0;
-	while (i++ < f_sizeb)
-		ft_printf("%c", '-');
-	ft_printf("|\n");
+	ft_ps_print_top(f_sizea, f_sizeb);
 	max = ((st->lena > st->lenb) ? st->lena : st->lenb);
 	i = 0;
 	while (i < max)
@@ -128,4 +120,5 @@ void			ft_ps_print_stcks(t_stack *st)
 		just_print(st, f_sizea, f_sizeb, i);
 		i++;
 	}
+	ft_ps_print_top(f_sizea, f_sizeb);
 }

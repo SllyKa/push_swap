@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 20:00:41 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/23 16:02:12 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/24 15:00:16 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,14 @@ int				main(int argc, char **argv)
 	t_stack		*st;
 	t_list		*lst;
 	t_avlt		*tr;
+	int			flags;
+	char		*fname;
 
+	fname = NULL;
 	lst = NULL;
 	tr = NULL;
+	if ((flags = check_flags(argc, argv, &fname)) > 0)
+		set_argv_argc(&argc, &argv, &flags, fname);
 	if (!(st = ft_ps_arg_check(argc, argv)))
 		write(2, "Error\n", 6);
 	else if (ft_ps_instruct_check(&lst, &tr) < 0)
