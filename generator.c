@@ -9,10 +9,12 @@ int main(int argc, char **argv)
 	int num;
 	int neg;
 	int pos;
+	int mid;
 	int coin;
 	int *arr;
 	int i = 0;
 	int j = 0;
+	FILE *f;
 
 	num = atoi(argv[1]);
 	arr = (int*)malloc(sizeof(int) * num);
@@ -22,34 +24,36 @@ int main(int argc, char **argv)
 	coin = 0 + rand() % 2;
 	while (i < num)
 	{
-		neg = -100000 + rand() % 100000;
+		neg = INT_MIN + rand();
 		pos = rand();
 		coin = 0 + rand() % 2;
-		//if (coin)
-		//	printf("%d ", pos);
-		//else
-		//	printf("%d ", neg);
+		if (coin)
+			mid = pos;
+		else
+			mid = neg;
 		j = 0;
 		while (j < i)
 		{
-			if (arr[j] == neg)
+			if (arr[j] == mid)
 				break;
 			j++;
 		}
-		if (arr[j] == neg)
+		if (arr[i] == mid)
 			continue;
-		arr[i] = neg;
+		arr[i] = mid;
 		i++;
 		
 	}
 	i = 0;
-	printf("ARG=\"");
+	//printf("ARG=\"");
+	f = fopen("test_num", "w");
 	while (i < num)
 	{
-		printf("%d ", arr[i]);
+		fprintf(f, "%d ", arr[i]);
 		i++;
 	}
-	printf("\"; ./push_swap $ARG | ./checker $ARG");
-	printf("\n");
+	//printf("\"; ./push_swap $ARG | ./checker $ARG");
+	fclose(f);
+	//printf("\n");
 	return (0);
 }
