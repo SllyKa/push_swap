@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 21:28:48 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/23 22:58:53 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/24 16:34:09 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "ft_push_swap.h"
 #include "avlt.h"
 
-static int			roll_b(t_stack *st, int bb, int gh_med)
+static int	roll_b(t_stack *st, int bb, int gh_med)
 {
 	int cntr;
 
