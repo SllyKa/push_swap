@@ -6,10 +6,11 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 15:09:49 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/24 16:09:41 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/24 17:14:30 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <unistd.h>
 #include "libftprintf.h"
 #include "ft_push_swap.h"
@@ -58,6 +59,8 @@ int			main(int argc, char **argv)
 		st->flags = flags;
 		st = sort(st, &tr);
 	}
+	if ((st->flags & 4) == 4)
+		free(argv[1]);
 	free_stack(&st);
 	free_avlt(tr);
 	return (0);

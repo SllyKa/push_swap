@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 20:00:41 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/24 15:00:16 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/10/24 17:21:24 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,9 @@ int				main(int argc, char **argv)
 		write(2, "Error\n", 6);
 	else
 		ft_ps_exec_ops(st, lst) <= 0 ? ft_printf("KO\n") : ft_printf("OK\n");
+	st->flags = flags;
+	if ((st->flags & 4) == 4)
+		free(argv[1]);
 	free_stack(&st);
 	free_avlt(tr);
 	free_ft_list(lst);
