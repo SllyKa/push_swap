@@ -6,7 +6,7 @@
 /*   By: gbrandon <gbrandon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 19:52:11 by gbrandon          #+#    #+#             */
-/*   Updated: 2019/10/24 14:52:21 by gbrandon         ###   ########.fr       */
+/*   Updated: 2019/11/15 02:59:00 by gbrandon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 #include <stdlib.h>
 #include "libftprintf.h"
 #include "ft_ps_checker.h"
+
+static void			*free_tab_ret(char **tab)
+{
+	free_tab(tab);
+	return (NULL);
+}
 
 static t_stack		*fill_stck(t_stack *st, int argc, char **argv)
 {
@@ -34,7 +40,7 @@ static t_stack		*fill_stck(t_stack *st, int argc, char **argv)
 			tab--;
 			(st->a)[st->lena] = ft_satoi(*tab, &er_code);
 			if (echk_atoi(er_code, st) < 0)
-				return (NULL);
+				return (free_tab_ret(tab_temp));
 			(st->lena)++;
 		}
 		free_tab(tab);
