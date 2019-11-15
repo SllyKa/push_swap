@@ -11,21 +11,19 @@ Checker program has to examing our `./push_swap` program and print `OK` if instr
 * checking instructions giving to our program(using AVL_tree to choose right operation functions) on valid input.
 * checking that instructions sort stack properly.
 * printing result: `OK` or `KO`.
-* hi.
 
 Checker supports bonus flags:
-+ `./checker -f` reading numbers from file.
-* hi
+* `./checker \-f` reading numbers from file.
 
 ### push_swap
 push_swap is a main program. It has give to us list of instructions to sort stack *A* in ascending order(less number on the top of the stack a) using stack *B* as an assistant.
 Moreover, this list should be as small as possible.
 
 For example, we have to match following values:
-+ 3 numbers - 3 operation.
-+ 5 numbers - 12 operations.
-+ 100 numbers - 700 operations.
-+ 500 numbers - 5400 operations.
+* 3 numbers \- 3 operation.
+* 5 numbers \- 12 operations.
+* 100 numbers \- 700 operations.
+* 500 numbers \- 5400 operations.
 
 ##### push_swap algorithm
 I use algorithm based on quicksort.
