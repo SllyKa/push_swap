@@ -11,7 +11,7 @@ Checker program has to examing our `./push_swap` program and print `OK` if instr
 * checking instructions giving to our program(using AVL_tree to choose right operation functions) on valid input.
 * checking that instructions sort stack properly.
 * printing result: `OK` or `KO`.
-*hi
+* hi.
 
 Checker supports bonus flags:
 + `./checker -f` reading numbers from file.
