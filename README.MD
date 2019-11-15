@@ -13,17 +13,17 @@ Checker program has to examing our `./push_swap` program and print `OK` if instr
 * printing result: `OK` or `KO`.
 
 Checker supports bonus flags:
-* `./checker -f` reading numbers from file
+* `./checker -f` reading numbers from file.
 
 ### push_swap
 push_swap is a main program. It has give to us list of instructions to sort stack *A* in ascending order(less number on the top of the stack a) using stack *B* as an assistant.
 Moreover, this list should be as small as possible.
 
 For example, we have to match following values:
-* 3 numbers \- 3 operation
-* 5 numbers \- 12 operations
-* 100 numbers \- 700 operations
-* 500 numbers \- 5400 operations
+* 3 numbers \- 3 operation.
+* 5 numbers \- 12 operations.
+* 100 numbers \- 700 operations.
+* 500 numbers \- 5400 operations.
 
 ##### push_swap algorithm
 I use algorithm based on quicksort.
@@ -35,8 +35,8 @@ if i pushed more than 3 numbers i am doing the same algorithm from the start but
 And so its going on until the stack is sorted.
 
 push_swap supports bonus flags:
-* `./push_swap -f` reading numbers from file
-* `./push_swap -v` print stack after execution every operation
-* `./push_swap -c` print output in color
+* `./push_swap -f` reading numbers from file.
+* `./push_swap -v` print stack after execution every operation.
+* `./push_swap -c` print output in color.
 
 testing and compiling on MacOS Sierra 10.12.6, clang 900.0.39.2
