@@ -20,10 +20,10 @@ push_swap is a main program. It has give to us list of instructions to sort stac
 Moreover, this list should be as small as possible.
 
 For example, we have to match following values:
-- 3 numbers - 3 operation
-- 5 numbers - 12 operations
-- 100 numbers - 700 operations
-- 500 numbers - 5400 operations
+- 3 numbers \- 3 operation
+- 5 numbers \- 12 operations
+- 100 numbers \- 700 operations
+- 500 numbers \- 5400 operations
 
 ##### push_swap algorithm
 I use algorithm based on quicksort.
@@ -34,7 +34,7 @@ Then i am sorting them and start pushing numbers from *B* to *A*.
 if i pushed more than 3 numbers i am doing the same algorithm from the start but applicable to stack *A* - find medians, smaller number pushing to *A* and in *A* additionaly sorting - greater number then second median leave on top of *A*, smaller going down by `rra` command.
 And so its going on until the stack is sorted.
 
-push_swap supports bonus flags
+push_swap supports bonus flags:
 - `./push_swap -f` reading numbers from file
 - `./push_swap -v` print stack after execution every operation
 - `./push_swap -c` print output in color
